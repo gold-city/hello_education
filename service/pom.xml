@@ -31,12 +31,13 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
+        <!--service_base已经引入common_utils
         <dependency>
-            <!--写服务器必须使用该返回模板，所以引入service模块里-->
+            &lt;!&ndash;写服务器必须使用该返回模板，所以引入service模块里&ndash;&gt;
             <groupId>com.city</groupId>
             <artifactId>common_utils</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-        </dependency>
+        </dependency>-->
 
 <!--springcloud，没使用得话导包启动会报错，发现注册服务-->
 

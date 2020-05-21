@@ -7,6 +7,8 @@ import com.city.commonutils.Result;
 import com.city.eduservice.entity.EduTeacher;
 import com.city.eduservice.entity.vo.ConditionsTeacher;
 import com.city.eduservice.service.EduTeacherService;
+import com.city.servicebase.myexception.MyException;
+import com.city.servicebase.myexception.exceptionenum.MyExceptionEnumImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -45,6 +47,12 @@ public class EduTeacherController {
     @GetMapping("/queryAllTeacher")
     public Result queryAllTeacher(){
         List<EduTeacher> list = eduTeacherService.list(null);
+        //测试自定义异常
+        try {
+            int i=10/0;
+        }catch (Exception e){
+            throw new MyException(MyExceptionEnumImpl.NOT_Exception);
+        }
         return Result.ok().data("allTeacher",list);
     }
 
